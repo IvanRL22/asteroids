@@ -2,6 +2,7 @@
 # the open-source pygame library
 # throughout this file
 import sys
+import random
 
 import pygame
 
@@ -55,6 +56,19 @@ def main():
             if a.is_colliding(player_ship):
                 print('Game over!')
                 sys.exit(0)
+
+            for s in shots:
+                if a.is_colliding(s):
+                    a.kill()
+                    s.kill()
+
+                    if a.radius > constants.ASTEROID_MIN_RADIUS:
+                        random_angle = random.uniform(20, 50)
+                        new_radius = a.radius - constants.ASTEROID_MIN_RADIUS
+                        new_ast_1 = Asteroid(a.position.x, a.position.y, new_radius)
+                        new_ast_1.velocity = a.velocity.rotate(random_angle) * 1.2
+                        new_ast_2 = Asteroid(a.position.x, a.position.y, new_radius)
+                        new_ast_2.velocity = a.velocity.rotate(-random_angle) * 1.2
 
         # This should work according to the project instructions, why doesn't it?
         # updatables.update(delta_t)
