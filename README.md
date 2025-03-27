@@ -2,6 +2,15 @@
 Second boot.dev project!  
 Basic project was coded in an afternoon on 23/03/2025
 
+## Running the game
+If you're on a Windows (like me, PC master race rise up), you'll have followed the same instructions as I did to install WSL console  
+Just remember to run this command everytime you open the console:
+
+``` shell
+
+source venv/bin/activate
+```
+
 ## Improvements
 There's a list of suggested improvements at the end of the project  
 I would like to eventually add them to experiment more with python and pygame  
@@ -19,3 +28,4 @@ Here's the list:
 - Add a shield power-up
 - Add a speed power-up
 - Add bombs that can be dropped
+
